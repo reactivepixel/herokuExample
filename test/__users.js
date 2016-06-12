@@ -6,7 +6,8 @@ let testUser = {};
 
 describe('User Model', () => {
 
-  before(() => {
+  // Before every test
+  beforeEach(() => {
     const mockUser = {
       name: 'Cpt. Hydra',
       age: 13,
@@ -19,6 +20,8 @@ describe('User Model', () => {
       testUser = newDbUser;
     });
   });
+
+  // afterEach
 
   it('Should be able to Read All Users', (done) => {
     user.findAll( (error) => {
