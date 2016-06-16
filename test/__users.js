@@ -5,7 +5,6 @@ const util = require('../lib/util');
 let testUser = {};
 
 describe('User Model', () => {
-
   // Before every test
   beforeEach(() => {
     const mockUser = {
@@ -24,20 +23,20 @@ describe('User Model', () => {
   // afterEach
 
   it('Should be able to Read All Users', (done) => {
-    user.findAll( (error) => {
+    user.findAll((error) => {
       util.debug('Error reading all Users', error);
     }, (allUsers) => {
       expect(allUsers.length).to.be.above(1);
       done();
-    })
+    });
   });
 
   it('Should be able to Read One User', (done) => {
     user.find(testUser, (error) => util.debug('Error reading One User', error),
     (oneUser) => {
-        expect(oneUser.id).to.be.equal(testUser.id);
-        done();
-    })
+      expect(oneUser.id).to.be.equal(testUser.id);
+      done();
+    });
   });
 
   it('Should be able to Create', () => {
@@ -48,13 +47,13 @@ describe('User Model', () => {
     const updateInfo = {
       id: testUser.id,
       name: 'Kevin',
-    }
+    };
     user.update(updateInfo, (err) => util.debug('User failed to update', err),
     (updatedDbUser) => {
       expect(updatedDbUser.name).to.be.equal(updateInfo.name);
       testUser = updatedDbUser;
       done();
-    })
+    });
   });
   it('Should be able to Delete', (done) => {
     user.destroy(testUser, (err) => util.debug('User Errored while destroying', err),

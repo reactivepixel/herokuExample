@@ -1,6 +1,7 @@
 {
 	"env": {
-		"node": true
+		"node": true,
+		"mocha": true
 	},
 	"extends": "airbnb",
 	"plugins": [
@@ -9,7 +10,8 @@
 	"rules": {
 		"new-cap": 0,
 		"prefer-template": 0,
-		"global-require": 0
+		"global-require": 0,
+		"no-unused-expressions": 0
 	},
 	"globals": {
 		"describe": true,
