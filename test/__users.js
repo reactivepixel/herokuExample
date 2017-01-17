@@ -20,24 +20,24 @@ describe('User Model', () => {
     });
   });
 
-  // afterEach
-
-  it('Should be able to Read All Users', (done) => {
-    user.findAll((error) => {
-      util.debug('Error reading all Users', error);
-    }, (allUsers) => {
-      expect(allUsers.length).to.be.above(0);
-      done();
-    });
-  });
-
-  it('Should be able to Read One User', (done) => {
-    user.find(testUser, (error) => util.debug('Error reading One User', error),
-    (oneUser) => {
-      expect(oneUser.id).to.be.equal(testUser.id);
-      done();
-    });
-  });
+  // // afterEach
+  //
+  // it('Should be able to Read All Users', (done) => {
+  //   user.findAll((error) => {
+  //     util.debug('Error reading all Users', error);
+  //   }, (allUsers) => {
+  //     expect(allUsers.length).to.be.above(10000000000);
+  //     done();
+  //   });
+  // });
+  //
+  // it('Should be able to Read One User', (done) => {
+  //   user.find(testUser, (error) => util.debug('Error reading One User', error),
+  //   (oneUser) => {
+  //     expect(oneUser.id).to.be.equal(testUser.id);
+  //     done();
+  //   });
+  // });
 
   it('Should be able to Create', () => {
     expect(testUser.id).to.not.be.null;
