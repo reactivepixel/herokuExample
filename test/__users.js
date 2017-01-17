@@ -26,7 +26,7 @@ describe('User Model', () => {
     user.findAll((error) => {
       util.debug('Error reading all Users', error);
     }, (allUsers) => {
-      expect(allUsers.length).to.be.above(1);
+      expect(allUsers.length).to.be.above(0);
       done();
     });
   });
